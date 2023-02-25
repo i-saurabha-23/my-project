@@ -1,91 +1,56 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Head from 'next/head'
 import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <div className={styles.container}>
+      <Head>
+        <title>GradGenius - Home</title>
+        <meta name="description" content="GradGenius - All graduation study materials and academic support for students" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Welcome to GradGenius!
+        </h1>
+
+        <p className={styles.description}>
+          Get all the resources you need to excel in your studies and graduate with good grades.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+
+        <div className={styles.grid}>
+          <a href="#" className={styles.card}>
+            <h3>Video Lectures &rarr;</h3>
+            <p>Access video lectures from experts in various fields to help you understand complex topics.</p>
+          </a>
+
+          <a href="#" className={styles.card}>
+            <h3>E-books &rarr;</h3>
+            <p>Download e-books on various subjects to supplement your studies.</p>
+          </a>
+
+          <a href="past-papers.tsx" className={styles.card}>
+            <h3>Past Question Papers &rarr;</h3>
+            <p>Access past question papers to help you prepare for exams.</p>
+          </a>
+
+          <a href="#" className={styles.card}>
+            <h3>Academic Support &rarr;</h3>
+            <p>Get academic support from experts in various fields to help you with your studies.</p>
           </a>
         </div>
-      </div>
+      </main>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
+      <footer className={styles.footer}>
         <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          href="https://gradgenius.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
+          Powered by GradGenius
         </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </footer>
+    </div>
   )
 }
